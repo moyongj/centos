@@ -12,6 +12,19 @@
       - 常见问题快速访问
       - 响应式设计适配多种设备
 -->
+<!--
+    人工智能工具：墨老师 CentOS 学习智能体
+    作者: MYJ
+    描述: 一个基于AI的CentOS 8学习助手，提供交互式学习体验，帮助用户掌握CentOS系统操作与管理技能
+    特性:
+      - 集成多种AI模型支持复杂问题解答
+      - 支持图片和文件上传辅助问题说明
+      - 实时流式响应显示
+      - 数字人头像动画效果
+      - 对话历史记录保存与回看
+      - 常见问题快速访问
+      - 响应式设计适配多种设备
+-->
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
@@ -803,11 +816,12 @@
                 flex: 1;
                 flex-direction: row;
                 gap: 15px;
+                margin-top: 0;
             }
             
             .digital-avatar-placeholder {
                 max-width: 100px;
-                height: 300px;
+                height: 100px;
                 margin-bottom: 0;
             }
             
@@ -820,6 +834,7 @@
             /* 移动端右边栏调整 */
             .sidebar {
                 order: 0;
+                min-height: 300px;
                 max-height: 400px;
                 overflow-y: auto;
             }
@@ -827,17 +842,19 @@
 
         @media (max-width: 576px) {
             .left-panel {
-                flex-direction: column;
+                flex-direction: row;
                 text-align: center;
+                padding: 10px;
             }
             
             .digital-human {
-                flex-direction: column;
+                flex-direction: row;
+                justify-content: flex-end;
             }
             
             .digital-avatar-placeholder {
-                max-width: 150px;
-                height: 300px;
+                max-width: 80px;
+                height: 80px;
             }
             
             .message-content {
@@ -846,6 +863,27 @@
             
             /* 移动端小屏幕右边栏调整 */
             .sidebar {
+                min-height: 300px;
+                max-height: 300px;
+            }
+        }
+    </style>
+                flex-direction: row;
+                justify-content: flex-end;
+            }
+            
+            .digital-avatar-placeholder {
+                max-width: 80px;
+                height: 80px;
+            }
+            
+            .message-content {
+                max-width: 85%;
+            }
+            
+            /* 移动端小屏幕右边栏调整 */
+            .sidebar {
+                min-height: 300px;
                 max-height: 300px;
             }
         }
@@ -1394,7 +1432,7 @@
                                             - 你具备丰富的CentOS 8知识，能够解答用户在使用、配置、管理CentOS 8时遇到的各种问题。
                                             - 你的回答第一段是"我是墨老师，让我们一起来分析问题："
                                             - 你的回答是"一、分析问题———二、案例解析———三、发散思考"三步法引导学生理解知识
-                                            - 尽量用图标辅助输出结果，例如🎯，📋，🌰等等
+                                            - 尽量用图标辅助输出结果，例如🎯，📋，🌰，🔔，🔍等等
                                             - 只回答CentOS或者汕头技师学院的相关问题`
                             },
                             {
