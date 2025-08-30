@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--
-    人工智能工具：墨老师 CentOS 学习智能体
+    人工智能工具：CentOS学习智能体
     作者: MYJ
     描述: 一个基于AI的CentOS 8学习助手，提供交互式学习体验，帮助用户掌握CentOS系统操作与管理技能
     特性:
@@ -127,6 +127,7 @@
             border-right: 1px solid #e0e0e0;
             display: flex;
             flex-direction: column;
+            background: #f8f9fa;
         }
 
         /*
@@ -686,7 +687,6 @@
 
         .api-config {
             margin-top: 10px;
-            display：none;
         }
 
         .api-config label {
@@ -792,6 +792,13 @@
                 gap: 10px;
                 padding: 10px;
                 border-bottom: 1px solid #e0e0e0;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                background: #f8f9fa;
+                z-index: 100;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             }
             
             .logo-container {
@@ -823,6 +830,7 @@
                 order: -1;
                 border-top: 1px solid #e0e0e0;
                 border-bottom: 1px solid #e0e0e0;
+                margin-top: 100px; /* 为固定顶部栏留出空间 */
             }
             
             /* 移动端右边栏调整 */
@@ -840,6 +848,11 @@
                 text-align: center;
                 padding: 8px;
                 gap: 8px;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             }
             
             .logo {
@@ -866,6 +879,10 @@
             .sidebar {
                 min-height: 300px;
                 max-height: 300px;
+            }
+            
+            .main-chat {
+                margin-top: 90px; /* 调整顶部边距以适应小屏幕 */
             }
         }
     </style>
@@ -958,8 +975,8 @@
                     <option value="THUDM/GLM-4.1V-9B-Thinking">THUDM/GLM-4.1V-9B-Thinking（视觉）</option>
                 </select>
                 <div class="api-config">
-                    <label for="apiKey"  style="display: none;">API 密钥:</label>
-                    <input type="password" id="apiKey" class="api-input" placeholder="请输入您的硅基流动API密钥" value="sk-sgvohskgydtpoaeubonnhtihyrgtnlpiiiuzgduqmdxxnmdd"  style="display: none;">
+                    <label for="apiKey" >API 密钥:</label>
+                    <input type="password" id="apiKey" class="api-input" placeholder="请输入您的硅基流动API密钥" value="sk-sgvohskgydtpoaeubonnhtihyrgtnlpiiiuzgduqmdxxnmdd" style="display: none;">
                 </div>
                 <div class="status-info" id="modelInfo">
                     GLM-4-9B-0414: 清华大学团队开发的90亿参数模型，擅长复杂逻辑推理
@@ -1412,7 +1429,7 @@
                                 content: `- 你是墨老师，汕头技师学院的CentOS学习导师，专门为用户提供关于CentOS 8操作系统学习过程中的帮助与指导。
                                             - 你具备丰富的CentOS 8知识，能够解答用户在使用、配置、管理CentOS 8时遇到的各种问题。
                                             - 你的回答第一段是"我是墨老师，让我们一起来分析问题："
-                                            - 你的回答是"一、分析问题；二、案例解析；三、发散思考"三步法引导学生理解知识
+                                            - 你的回答是"一、分析问题———二、案例解析———三、发散思考"三步法引导学生理解知识
                                             - 尽量用图标辅助输出结果，例如🎯，📋，🌰等等
                                             - 只回答CentOS或者汕头技师学院的相关问题`
                             },
